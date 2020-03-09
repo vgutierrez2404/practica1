@@ -1,0 +1,28 @@
+package es.upm.dit.adsw.practica1;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+
+public class PruebaVehiculo {
+	
+	private Vehiculo vp;
+	private DetectorVehiculos detector1;
+	@Before
+	public void setUp() {
+		vp = new Vehiculo("000", new Vector(0.0,0.0), 0, new Vector(1.0,1.0),1);
+		
+	}
+	@Test
+	public void prueba1() {
+		assertEquals(null, vp.getDetector());
+	}
+	@Test 
+	public void prueba2() {
+		detector1 = new DetectorVehiculos(vp);
+		 vp.setDetector(detector1);
+		 assertEquals(vp,detector1.getV());
+		 assertEquals(detector1,vp.getDetector());
+	 }
+
+}
